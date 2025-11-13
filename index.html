@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Burhan Ahmad - Web3 Community Manager and DeFi Enthusiast passionate about blockchain, NFTs, and decentralized innovation.">
+  <meta property="og:title" content="Burhan Ahmad - Web3 & DeFi Professional Portfolio">
+  <meta property="og:description" content="Experienced Web3 professional with expertise in community management, DeFi, and blockchain ecosystems. Explore my journey in crypto, NFTs, and decentralized platforms.">
+  <meta property="og:type" content="website">
+  <title>BurhanAhmad.Web3 | Community & DeFi Professional</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class', 
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Space Grotesk', 'sans-serif'],
+          },
+          colors: {
+            // Dark Mode Primary Theme Colors
+            'primary-web3': '#2563eb', // Blue-700
+            'secondary-web3': '#10b981', // Emerald-500 - Highlight color
+            'dark-background': '#111827', // Gray-900 (Main BG)
+            'dark-card': '#1f2937', // Gray-800 (Card BG)
+            'dark-lighter': '#374151', // Gray-700
+          },
+          keyframes: {
+            'subtle-glow': {
+              '0%, 100%': { 'box-shadow': '0 0 10px rgba(16, 185, 129, 0.5)' }, // Emerald glow
+              '50%': { 'box-shadow': '0 0 15px rgba(16, 185, 129, 0.8)' },
+            }
+          },
+          animation: {
+            'subtle-glow': 'subtle-glow 3s ease-in-out infinite alternate',
+          }
+        },
+      },
+    };
+  </script>
+  <style>
+    /* ---------------------------------------------------- */
+    /* ENFORCED DARK MODE BASE STYLES */
+    /* ---------------------------------------------------- */
+    body {
+        transition: background-color 0.5s, color 0.5s; 
+    }
+    
+    /* ---------------------------------------------------- */
+    /* 3D PARALLAX EFFECT STYLES */
+    /* ---------------------------------------------------- */
+    .parallax-container {
+        perspective: 1000px; 
+    }
+    .parallax-element {
+        transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+        transform-style: preserve-3d;
+    }
+    /* Enhanced hover elevation for experience cards */
+    .card-hover-3d {
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .card-hover-3d:hover {
+        transform: translateY(-8px) rotateX(1deg) scale(1.01); 
+        box-shadow: 0 15px 35px rgba(16, 185, 129, 0.2);
+    }
+
+    /* Timeline styling for dark mode */
+    .timeline-line {
+        position: absolute; /* Changed from relative to absolute for correct positioning */
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 0.5rem; /* Increased width for better visibility */
+        background-color: #374151; /* Gray-700 for dark mode */
+        transform: translateX(-50%); /* Center the line */
+        z-index: 1; /* Ensure it's behind content */
+    }
+    .timeline-item {
+      position: relative; /* Needed for timeline dot positioning */
+      z-index: 2; /* Ensure content is above the line */
+    }
+    .timeline-dot {
+        position: absolute;
+        width: 1.25rem; /* Slightly larger dot */
+        height: 1.25rem; /* Slightly larger dot */
+        border-radius: 9999px;
+        background-color: #10b981; /* Secondary Web3 color */
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center dot perfectly */
+        border: 4px solid #111827; /* Dark background color for border */
+        box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3); /* Subtle outer glow */
+    }
+    /* Adjusted top values for timeline dots to be correctly positioned */
+    .timeline-dot-pyron { top: 10%; } /* Example, adjust as needed */
+    .timeline-dot-townies { top: 30%; } /* Example, adjust as needed */
+    .timeline-dot-velixo { top: 50%; } /* Example, adjust as needed */
+    .timeline-dot-slinky { top: 70%; } /* Example, adjust as needed */
+    .timeline-dot-outcast { top: 90%; } /* Example, adjust as needed */
+
+
+    /* Responsive adjustments for 3D Parallax: disable on mobile for better performance */
+    @media (max-width: 768px) {
+        .parallax-container, .parallax-element {
+            perspective: none; 
+            transform: none !important;
+            transition: none !important;
+        }
+        .timeline-line, .timeline-dot { /* Hide timeline elements on mobile if not adapted */
+            display: none !important;
+        }
+        .md\\:ml-0, .md\\:mr-auto, .md\\:ml-auto, .md\\:mr-0 {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-dark-background text-gray-100 font-sans">
+
+<nav id="nav" class="fixed top-0 w-full bg-dark-background/90 backdrop-blur-sm border-b border-gray-700 z-50 shadow-2xl">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+    <div class="font-bold text-2xl tracking-wider text-secondary-web3">BurhanAhmad.<span class="text-gray-200">Web3</span></div> 
+    <div class="flex items-center gap-6">
+      <a href="#about" class="text-gray-300 hover:text-secondary-web3 transition-colors text-lg font-medium">About</a>
+      <a href="#experience" class="text-gray-300 hover:text-secondary-web3 transition-colors text-lg font-medium">Experience</a>
+    </div>
+  </div>
+</nav>
+
+<section class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 pb-10">
+  <div class="max-w-5xl mx-auto text-center">
+    <h1 class="text-5xl md:text-8xl font-bold mb-6 tracking-tight animate-pulse" style="animation-duration: 4s;">
+      Hi, I'm <span class="text-secondary-web3">Burhan Ahmad</span>
+    </h1>
+    <p class="text-xl md:text-3xl text-gray-400 mb-10 leading-relaxed font-light">
+      Web3 Community Builder & DeFi Enthusiast
+    </p>
+    <button onclick="scrollToSection('about')" class="bg-primary-web3 text-white px-10 py-4 rounded-xl text-lg font-semibold shadow-2xl shadow-primary-web3/30 hover:bg-blue-600 transition-all duration-300 transform hover:scale-[1.03] active:scale-[0.98] active:shadow-md">
+      Explore about me <span class="ml-2">↓</span>
+    </button>
+  </div>
+</section>
+
+<section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-dark-card/50 transition-colors duration-500 parallax-container">
+  <div class="max-w-6xl mx-auto parallax-element" id="about-parallax">
+    <img src="https://pbs.twimg.com/profile_images/1968019258668978177/t-TuTM4R_400x400.jpg" alt="Burhan Ahmad" class="w-36 h-36 md:w-48 md:h-48 rounded-full mx-auto mb-10 object-cover shadow-2xl border-4 border-secondary-web3 animate-subtle-glow">
+    
+    <h2 class="text-4xl md:text-6xl font-bold mb-16 text-center text-secondary-web3">About Me</h2>
+    <div class="grid lg:grid-cols-3 gap-12 items-start">
+      <div class="lg:col-span-2 space-y-8 bg-dark-card/80 p-8 rounded-2xl shadow-xl border border-gray-700">
+
+        <p class="text-base md:text-xl leading-relaxed text-gray-200 font-medium">
+            I’m Burhan Ahmad from Pakistan with over 4 years plus  of experience in the Web3 space and community management. I have strong knowledge of NFTs, DeFi, and crypto ecosystems, and I enjoy helping projects grow by building active, value-driven communities.
+        </p>
+        <ul class="space-y-4 list-disc pl-5 text-base md:text-xl leading-relaxed text-gray-300">
+            <li class="hover:text-secondary-web3 transition-colors">Skilled in community management and user engagement.</li>
+            <li class="hover:text-secondary-web3 transition-colors">Passionate about exploring blockchain innovations and contributing to the Web3 ecosystem.</li>
+            <li class="hover:text-secondary-web3 transition-colors">Strong understanding of blockchain technology, smart contracts, and node networks.</li>
+        </ul>
+        <div class="pt-6">
+          <h3 class="text-2xl font-semibold mb-5 text-gray-200 border-b pb-2 border-secondary-web3/50">Core Interests</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="tag-pill bg-dark-lighter text-secondary-web3 font-medium text-sm px-4 py-1.5 rounded-full border border-secondary-web3/30 hover:shadow-lg transition-shadow">DeFi</span>
+            <span class="tag-pill bg-dark-lighter text-secondary-web3 font-medium text-sm px-4 py-1.5 rounded-full border border-secondary-web3/30 hover:shadow-lg transition-shadow">Airdrop Hunting</span>
+            <span class="tag-pill bg-dark-lighter text-secondary-web3 font-medium text-sm px-4 py-1.5 rounded-full border border-secondary-web3/30 hover:shadow-lg transition-shadow">Community Management</span>
+            <span class="tag-pill bg-dark-lighter text-secondary-web3 font-medium text-sm px-4 py-1.5 rounded-full border border-secondary-web3/30 hover:shadow-lg transition-shadow">Blockchain</span>
+            <span class="tag-pill bg-dark-lighter text-secondary-web3 font-medium text-sm px-4 py-1.5 rounded-full border border-secondary-web3/30 hover:shadow-lg transition-shadow">NFTs</span>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-1">
+        <div class="bg-dark-card p-8 rounded-2xl shadow-2xl border border-secondary-web3/20">
+          <h3 class="text-2xl font-semibold mb-5 text-gray-200 border-b pb-2 border-secondary-web3/50">Tech Skills</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="skill-pill bg-dark-lighter/50 text-gray-200 text-sm px-4 py-1.5 rounded-lg font-medium hover:bg-dark-lighter transition-colors">Community Building</span>
+            <span class="skill-pill bg-dark-lighter/50 text-gray-200 text-sm px-4 py-1.5 rounded-lg font-medium hover:bg-dark-lighter transition-colors">DeFi & DEX</span>
+            <span class="skill-pill bg-dark-lighter/50 text-gray-200 text-sm px-4 py-1.5 rounded-lg font-medium hover:bg-dark-lighter transition-colors">Web3 Growth</span>
+            <span class="skill-pill bg-dark-lighter/50 text-gray-200 text-sm px-4 py-1.5 rounded-lg font-medium hover:bg-dark-lighter transition-colors">Content Strategy</span>
+            <span class="skill-pill bg-dark-lighter/50 text-gray-200 text-sm px-4 py-1.5 rounded-lg font-medium hover:bg-dark-lighter transition-colors">Discord/Telegram Mod</span>
+            <span class="skill-pill bg-dark-lighter/50 text-gray-200 text-sm px-4 py-1.5 rounded-lg font-medium hover:bg-dark-lighter transition-colors">Node Operation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="py-20 px-4 sm:px-6 lg:px-8 parallax-container bg-dark-background">
+  <div class="max-w-6xl mx-auto parallax-element" id="experience-parallax">
+    <h2 class="text-4xl md:text-6xl font-bold mb-16 text-center text-secondary-web3">Web3 Experience</h2>
+    <div class="relative">
+      <div class="timeline-line hidden md:block"></div>
+
+      <div class="flex flex-wrap justify-center md:justify-start mb-20 relative timeline-item">
+        <div class="timeline-dot hidden md:block" style="top: 0;"></div>
+        <div class="bg-dark-card p-6 md:p-8 max-w-lg w-full rounded-xl shadow-xl border-t-4 border-secondary-web3 card-hover-3d transition-all duration-500 md:ml-0 md:mr-auto">
+          <img src="https://pbs.twimg.com/profile_images/1947572629113618432/0lRixqfs_400x400.jpg" alt="Pyron Logo" class="w-16 h-16 rounded-lg mb-4 object-contain border border-gray-600 p-1">
+          <div class="space-y-4">
+            <div>
+              <a href="https://fogolabs.io/" target="_blank" class="text-2xl font-bold hover:text-secondary-web3 transition-colors block mb-1">Pyron (by Fogo Labs)</a>
+              <p class="text-lg font-semibold text-secondary-web3">Community Moderator & Project Support</p>
+              <p class="text-sm text-gray-400 italic">Currently Working</p>
+            </div>
+            <ul class="space-y-3 list-disc pl-5 text-gray-300">
+              <li>Supported community engagement for Pyron, Fogo’s Asset Productivity Layer for DeFi lending.</li>
+              <li>Managed community updates, event coordination, and OG role verification efficiently.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap justify-center md:justify-end mb-20 relative timeline-item">
+        <div class="timeline-dot hidden md:block" style="top: 0;"></div>
+        <div class="bg-dark-card p-6 md:p-8 max-w-lg w-full rounded-xl shadow-xl border-t-4 border-secondary-web3 card-hover-3d transition-all duration-500 md:mr-0 md:ml-auto">
+          <img src="https://pbs.twimg.com/profile_images/1945652432530280448/IVPq6Juo_400x400.jpg" alt="Townies Logo" class="w-16 h-16 rounded-lg mb-4 object-contain border border-gray-600 p-1">
+          <div class="space-y-4">
+            <div>
+              <a href="YOUR_TOWNIES_LINK_HERE" target="_blank" class="text-2xl font-bold hover:text-secondary-web3 transition-colors block mb-1">Townies</a>
+              <p class="text-lg font-semibold text-secondary-web3">Project Manager & Community Lead</p>
+              <p class="text-sm text-gray-400 italic">Currently Working</p>
+            </div>
+            <ul class="space-y-3 list-disc pl-5 text-gray-300">
+                 <li>Helping the community with my moderation skills .</li>
+              <li>Led pre-registration & play-to-earn campaigns, successfully onboarding new players.</li>
+              <li>Managed engagement across Web DApp, Base App, and Farcaster mini-games, boosting activity.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap justify-center md:justify-start mb-20 relative timeline-item">
+        <div class="timeline-dot hidden md:block" style="top: 0;"></div>
+        <div class="bg-dark-card p-6 md:p-8 max-w-lg w-full rounded-xl shadow-xl border-t-4 border-secondary-web3 card-hover-3d transition-all duration-500 md:ml-0 md:mr-auto">
+          <img src="https://pbs.twimg.com/profile_images/1955297917264101376/qqrTBTY__400x400.jpg" alt="Velixomarket Logo" class="w-16 h-16 rounded-lg mb-4 object-contain border border-gray-600 p-1">
+          <div class="space-y-4">
+            <div>
+              <a href="YOUR_VELIXOMARKET_LINK_HERE" target="_blank" class="text-2xl font-bold hover:text-secondary-web3 transition-colors block mb-1">Velixomarket</a>
+              <p class="text-lg font-semibold text-secondary-web3">Community & Growth Lead</p>
+              <p class="text-sm text-gray-400 italic">Currently Working</p>
+            </div>
+            <ul class="space-y-3 list-disc pl-5 text-gray-300">
+              <li>Handled moderation, engagement, and user support, maintaining a positive community environment.</li>
+              <li>Planned and executed growth strategies to drive marketplace adoption and platform awareness.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="flex flex-wrap justify-center md:justify-end mb-20 relative timeline-item">
+        <div class="timeline-dot hidden md:block" style="top: 0;"></div>
+        <div class="bg-dark-card p-6 md:p-8 max-w-lg w-full rounded-xl shadow-xl border-t-4 border-secondary-web3 card-hover-3d transition-all duration-500 md:mr-0 md:ml-auto">
+          <img src="https://pbs.twimg.com/profile_images/1971105928519864320/7FKmgaOl_400x400.jpg" alt="Slinky Web3AI Logo" class="w-16 h-16 rounded-lg mb-4 object-contain border border-gray-600 p-1">
+          <div class="space-y-4">
+            <div>
+              <a href="YOUR_SLINKY_LINK_HERE" target="_blank" class="text-2xl font-bold hover:text-secondary-web3 transition-colors block mb-1">Slinky Web3AI</a>
+              <p class="text-lg font-semibold text-secondary-web3">Community Promoter & Advocate</p>
+              <p class="text-sm text-gray-400 italic">2024</p>
+            </div>
+            <ul class="space-y-3 list-disc pl-5 text-gray-300">
+                      <li>I joined slinkyweb3Ai in Aug, 2024 ,where I keep the community engaged , worked as mod for 3 months</li>
+              <li>Promoted AI-powered Web3 builder platform secured by Bitcoin and Babylon.</li>
+              <li>Helped creators understand tokenized micro-economies and decentralized app creation.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap justify-center md:justify-start mb-0 relative timeline-item">
+        <div class="timeline-dot hidden md:block" style="top: 0;"></div>
+        <div class="bg-dark-card p-6 md:p-8 max-w-lg w-full rounded-xl shadow-xl border-t-4 border-secondary-web3 card-hover-3d transition-all duration-500 md:ml-0 md:mr-auto">
+          <img src="https://pbs.twimg.com/profile_images/1764108432435523584/gqN_kyVC_400x400.jpg" alt="Outcast Droids Logo" class="w-16 h-16 rounded-lg mb-4 object-contain border border-gray-600 p-1">
+          <div class="space-y-4">
+            <div>
+              <a href="YOUR_OUTCAST_DROIDS_LINK_HERE" target="_blank" class="text-2xl font-bold hover:text-secondary-web3 transition-colors block mb-1">Outcast Droids</a>
+              <p class="text-lg font-semibold text-secondary-web3">Community Moderator & Advisor</p>
+              <p class="text-sm text-gray-400 italic">2023</p>
+            </div>
+            <ul class="space-y-3 list-disc pl-5 text-gray-300">
+                      <li>I joined Outcast Droids in Jan 2023 and worked 8+ month as MOd </li>
+              <li>Serving as moderator and advisor for the NFT project, fostering a friendly environment.</li>
+              <li>Managed channels during key NFT drops and announcem
+              ents, controlling crowd sentiment.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="py-10 px-6 bg-gray-900 border-t border-secondary-web3/50 mt-10">
+    <div class="max-w-6xl mx-auto text-center">
+        <p class="text-gray-400 text-lg font-medium mb-6">Connect with me</p>
+        <div class="flex justify-center space-x-6 mb-8">
+            <a href="https://x.com/Burhan_G_M" target="_blank" class="text-gray-400 hover:text-secondary-web3 transition-all duration-300 transform hover:scale-125" aria-label="Twitter">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M22.254 5.632c-.754.333-1.556.556-2.397.662a4.484 4.484 0 001.956-2.305 8.899 8.899 0 01-2.668 1.018 4.475 4.475 0 00-7.625 4.072 12.614 12.614 0 01-9.15-4.636 4.47 4.47 0 001.385 5.975 4.457 4.457 0 01-2.022-.559v.056a4.485 4.485 0 003.593 4.4 4.486 4.486 0 01-2.022.076 4.487 4.487 0 004.187 3.12 8.986 8.986 0 01-5.594 1.936 8.995 8.995 0 01-1.076-.063 12.66 12.66 0 006.84 2.016c8.203 0 12.684-6.805 12.684-12.68 0-.193-.004-.386-.013-.578a9.176 9.176 0 002.255-2.345l.001-.002z"></path></svg>
+            </a>
+            <a href="https://discord.com/users/Burhan_gm" target="_blank" class="text-gray-400 hover:text-secondary-web3 transition-all duration-300 transform hover:scale-125" aria-label="Discord">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12.001 0C6.186 0 1.252 4.934 1.252 10.743c0 4.197 2.454 7.82 5.962 9.548l-.94 1.76a.545.545 0 00.177.67.544.544 0 00.672-.178l1.458-2.735A10.71 10.71 0 0012.001 21.488c5.815 0 10.748-4.934 10.748-10.745C22.749 4.934 17.815 0 12.001 0zm4.254 15.118a1.597 1.597 0 01-1.724 1.51c-.698 0-1.272-.257-1.724-.515-.452-.257-.905-.623-1.442-.623s-.99.366-1.442.623c-.452.258-1.026.515-1.724.515a1.598 1.598 0 01-1.724-1.51c0-.498.24-.875.58-.934 1.01-.177 1.836-.788 2.29-1.298.452-.51.693-1.121.693-1.847 0-.726-.24-1.337-.693-1.847-.454-.51-1.28-1.121-2.29-1.298-.34-.059-.58-.436-.58-.934a1.598 1.598 0 011.724-1.51c.698 0 1.272.257 1.724.515.452.257.905.623 1.442.623s.99-.366 1.442.623c.452.258 1.026.515 1.724.515a1.597 1.597 0 011.724 1.51c0 .498-.24.875-.58.934-1.01.177-1.836.788-2.29 1.298-.452.51-.693 1.121-.693 1.847 0 .726.24 1.337.693 1.847.454.51 1.28 1.121 2.29 1.298.34.059.58.436.58.934z"/></svg>
+            </a>
+            <a href="mailto:Burhanahmad83844@gmail.com" class="text-gray-400 hover:text-secondary-web3 transition-all duration-300 transform hover:scale-125" aria-label="Email">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
+            </a>
+        </div>
+        <p class="text-sm text-gray-600">© 2025 Burhan Ahmad. Built for the Decentralized Web.</p>
+    </div>
+</footer>
+
+<script>
+    // --- 1. Smooth Scroll Logic ---
+    function scrollToSection(id) {
+        const element = document.getElementById(id);
+        if (element) {
+            const navHeight = document.getElementById('nav').offsetHeight;
+            window.scrollTo({
+                top: element.offsetTop - navHeight - 20,
+                behavior: 'smooth'
+            });
+        }
+    }
+    window.scrollToSection = scrollToSection; 
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            scrollToSection(targetId);
+        });
+    });
+
+    // --- 2. 3D Parallax Mouse Tracking Effect (PC only) ---
+    if (window.innerWidth > 768) {
+        const parallaxElements = document.querySelectorAll('.parallax-element');
+        const intensity = 8; 
+
+        document.addEventListener('mousemove', (e) => {
+            parallaxElements.forEach(element => {
+                const rect = element.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+
+                const offsetX = e.clientX - centerX;
+                const offsetY = e.clientY - centerY;
+
+                const rotateY = (offsetX / rect.width) * -intensity;
+                const rotateX = (offsetY / rect.height) * intensity;
+                
+                element.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.01)`;
+            });
+        });
+
+        document.addEventListener('mouseleave', () => {
+             parallaxElements.forEach(element => {
+                element.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+            });
+        });
+    }
+
+</script>
+
+</body>
+</html>
